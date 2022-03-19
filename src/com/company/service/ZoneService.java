@@ -25,7 +25,7 @@ public class ZoneService {
             resultat = zoneDao.findZoneById(zoneDto.getIdZone());
         } else {
             resultat = new Zone();
-            resultat.setIdZone(zoneDto.getIdZone());
+            //resultat.setIdZone(zoneDto.getIdZone()); pas d'id sur une création (ou 0)
             resultat.setIdDelib(zoneDto.getIdDelib());
             resultat.setProp1(zoneDto.getProp1());
             if(zoneDto.getIdTaux() == null || zoneDto.getIdTaux() == null) {
@@ -52,7 +52,7 @@ public class ZoneService {
             resultat = zoneDao.findZoneById(zoneDto.getIdZone());
         } else {
             resultat = new Zone();
-            resultat.setIdZone(zoneDto.getIdZone());
+            //resultat.setIdZone(zoneDto.getIdZone()); pas d'id sur une création (ou 0)
             resultat.setIdDelib(zoneDto.getIdDelib());
             resultat.setProp1(zoneDto.getProp1());
             if(zoneDto.getIdTarif() == null || zoneDto.getIdTarif() == null) {
@@ -79,7 +79,7 @@ public class ZoneService {
             resultat = zoneDao.findZoneById(zoneDto.getIdZone());
         } else {
             resultat = new Zone();
-            resultat.setIdZone(zoneDto.getIdZone());
+            //resultat.setIdZone(zoneDto.getIdZone()); pas d'id sur une création (ou 0)
             resultat.setIdDelib(zoneDto.getIdDelib());
             resultat.setProp1(zoneDto.getProp1());
             if(zoneDto.getIdTaux() != null && zoneDto.getIdTaux() != null) {

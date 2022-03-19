@@ -4,6 +4,8 @@ import com.company.entity.Taux;
 
 public class TauxDao {
     public Taux findTauxById(int id) {
-        return new Taux();
+        Taux taux = new Taux();
+        taux.setIdTaux(id);
+        return taux;
     }
 }

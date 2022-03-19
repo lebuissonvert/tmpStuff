@@ -19,7 +19,7 @@ public class DeliberationService {
     private ExonerationService exonerationService = new ExonerationService();
     private DeliberationDao deliberationDao = new DeliberationDao();
 
-    public void creerDeliberation(DeliberationDto deliberationDto) {
+    public Deliberation creerDeliberation(DeliberationDto deliberationDto) {
         Deliberation deliberation = new Deliberation();
 
         Set<Taux> taux = new LinkedHashSet<>();
@@ -42,9 +42,11 @@ public class DeliberationService {
         deliberation.setListeExoneration(exonerations);
         deliberation.setProp1(deliberationDto.getProp1());
         deliberation.setProp2(deliberationDto.getProp2());
+
+        return deliberation;
     }
 
-    public void updateDeliberation(DeliberationDto deliberationDto) {
+    public Deliberation updateDeliberation(DeliberationDto deliberationDto) {
         Deliberation deliberation = deliberationDao.findDeliberationById(deliberationDto.getIdDeliberation());
 
         Set<Taux> taux = new LinkedHashSet<>();
@@ -67,5 +69,7 @@ public class DeliberationService {
         deliberation.setListeExoneration(exonerations);
         deliberation.setProp1(deliberationDto.getProp1());
         deliberation.setProp2(deliberationDto.getProp2());
+
+        return deliberation;
     }
 }

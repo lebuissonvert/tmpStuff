@@ -18,8 +18,8 @@ public class TauxService {
             resultat = tauxDao.findTauxById(tauxDto.getIdTaux());
         } else {
             resultat = new Taux();
-            resultat.setProp1("prop1");
-            resultat.setProp2("prop2");
+            resultat.setProp1(tauxDto.getProp1());
+            resultat.setProp2(tauxDto.getProp2());
             if(tauxDto.getIdDeliberation() == null) {
                 resultat.setDeliberation(deliberation);
             } else {

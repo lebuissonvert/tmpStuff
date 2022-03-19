@@ -18,8 +18,8 @@ public class TarifService {
             resultat = tarifDao.findTarifById(tarifDto.getIdTarif());
         } else {
             resultat = new Tarif();
-            resultat.setProp1("prop1");
-            resultat.setProp2("prop2");
+            resultat.setProp1(tarifDto.getProp1());
+            resultat.setProp2(tarifDto.getProp2());
             if(tarifDto.getIdDeliberation() == null) {
                 resultat.setDeliberation(deliberation);
             } else {

@@ -4,6 +4,8 @@ import com.company.entity.Zone;
 
 public class ZoneDao {
     public Zone findZoneById(int id) {
-        return new Zone();
+        Zone zone = new Zone();
+        zone.setIdZone(id);
+        return zone;
     }
 }
