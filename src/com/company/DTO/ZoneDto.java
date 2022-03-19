@@ -1,20 +1,28 @@
 package com.company.DTO;
 
-import com.company.entity.Tarif;
-import com.company.entity.Taux;
+import java.util.List;
 
 public class ZoneDto {
-    private int idZone;
+    private Integer idZone;
     private int idDelib;
-    private TarifDto tarif;
-    private TauxDto taux;
+    private Integer idTarif;
+    private Integer idTaux;
+    private List<Integer> idsExoneration;
     private String prop1;
 
-    public int getIdZone() {
+    public List<Integer> getIdsExoneration() {
+        return idsExoneration;
+    }
+
+    public void setIdsExoneration(List<Integer> idsExoneration) {
+        this.idsExoneration = idsExoneration;
+    }
+
+    public Integer getIdZone() {
         return idZone;
     }
 
-    public void setIdZone(int idZone) {
+    public void setIdZone(Integer idZone) {
         this.idZone = idZone;
     }
 
@@ -26,20 +34,20 @@ public class ZoneDto {
         this.idDelib = idDelib;
     }
 
-    public TarifDto getTarif() {
-        return tarif;
+    public Integer getIdTarif() {
+        return idTarif;
     }
 
-    public void setTarif(TarifDto tarif) {
-        this.tarif = tarif;
+    public void setIdTarif(Integer idTarif) {
+        this.idTarif = idTarif;
     }
 
-    public TauxDto getTaux() {
-        return taux;
+    public Integer getIdTaux() {
+        return idTaux;
     }
 
-    public void setTaux(TauxDto taux) {
-        this.taux = taux;
+    public void setIdTaux(Integer idTaux) {
+        this.idTaux = idTaux;
     }
 
     public String getProp1() {

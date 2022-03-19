@@ -5,6 +5,18 @@ import java.util.Set;
 
 public class Exoneration {
     private int idExoneration;
+    private Deliberation deliberation;
+    private Set<Zone> listeZones = new LinkedHashSet<>();
+    private String prop1;
+    private String prop2;
+
+    public Deliberation getDeliberation() {
+        return deliberation;
+    }
+
+    public void setDeliberation(Deliberation deliberation) {
+        this.deliberation = deliberation;
+    }
 
     public int getIdExoneration() {
         return idExoneration;
@@ -13,10 +25,6 @@ public class Exoneration {
     public void setIdExoneration(int idExoneration) {
         this.idExoneration = idExoneration;
     }
-
-    private String prop1;
-    private String prop2;
-    private Set<Zone> listeZones = new LinkedHashSet<>();
 
     public String getProp1() {
         return prop1;

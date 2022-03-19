@@ -1,11 +1,22 @@
 package com.company.entity;
 
+import java.util.Set;
+
 public class Zone {
     private int idZone;
     private int idDelib;
     private Tarif tarif;
     private Taux taux;
+    private Set<Exoneration> exonerations;
     private String prop1;
+
+    public Set<Exoneration> getExonerations() {
+        return exonerations;
+    }
+
+    public void setExonerations(Set<Exoneration> exonerations) {
+        this.exonerations = exonerations;
+    }
 
     public int getIdZone() {
         return idZone;

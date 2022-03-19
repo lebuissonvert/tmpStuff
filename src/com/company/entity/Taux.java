@@ -5,6 +5,15 @@ import java.util.Set;
 
 public class Taux {
     private int idTaux;
+    private Deliberation deliberation;
+
+    public Deliberation getDeliberation() {
+        return deliberation;
+    }
+
+    public void setDeliberation(Deliberation deliberation) {
+        this.deliberation = deliberation;
+    }
 
     public int getIdTaux() {
         return idTaux;

@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.DTO.DeliberationDto;
+import com.company.service.DeliberationService;
 
 import java.util.*;
 
@@ -19,6 +20,6 @@ public class Main {
     }
 
     private void create(DeliberationDto delibDto) {
-
+        new DeliberationService().creerDeliberation(delibDto);
     }
 }

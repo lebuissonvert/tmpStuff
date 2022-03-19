@@ -5,6 +5,18 @@ import java.util.Set;
 
 public class Tarif {
     private int idTarif;
+    private Deliberation deliberation;
+    private String prop1;
+    private String prop2;
+    private Set<Zone> listeZones = new LinkedHashSet<>();
+
+    public Deliberation getDeliberation() {
+        return deliberation;
+    }
+
+    public void setDeliberation(Deliberation deliberation) {
+        this.deliberation = deliberation;
+    }
 
     public int getIdTarif() {
         return idTarif;
@@ -13,10 +25,6 @@ public class Tarif {
     public void setIdTarif(int idTarif) {
         this.idTarif = idTarif;
     }
-
-    private String prop1;
-    private String prop2;
-    private Set<Zone> listeZones = new LinkedHashSet<>();
 
     public String getProp1() {
         return prop1;
