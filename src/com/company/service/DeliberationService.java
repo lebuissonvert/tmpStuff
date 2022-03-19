@@ -1,5 +1,6 @@
 package com.company.service;
 
+import com.company.DAO.DeliberationDao;
 import com.company.DTO.DeliberationDto;
 import com.company.DTO.ExonerationDto;
 import com.company.DTO.TauxDto;
@@ -16,9 +17,35 @@ public class DeliberationService {
     private TauxService tauxService = new TauxService();
     private TarifService tarifService = new TarifService();
     private ExonerationService exonerationService = new ExonerationService();
+    private DeliberationDao deliberationDao = new DeliberationDao();
 
     public void creerDeliberation(DeliberationDto deliberationDto) {
         Deliberation deliberation = new Deliberation();
+
+        Set<Taux> taux = new LinkedHashSet<>();
+        for(TauxDto curTauxDto : deliberationDto.getListeTauxDto()) {
+            taux.add(tauxService.getTauxByDto(curTauxDto, deliberation));
+        }
+
+        Tarif tarif = null;
+        if(deliberationDto.getTarifDto() != null) {
+            tarif = tarifService.getTarifByDto(deliberationDto.getTarifDto(), deliberation);
+        }
+
+        Set<Exoneration> exonerations = new LinkedHashSet<>();
+        for(ExonerationDto curExonerationDto : deliberationDto.getListeExonerationDto()) {
+            exonerations.add(exonerationService.getExonerationByDto(curExonerationDto, deliberation));
+        }
+
+        deliberation.setListeTaux(taux);
+        deliberation.setTarif(tarif);
+        deliberation.setListeExoneration(exonerations);
+        deliberation.setProp1(deliberationDto.getProp1());
+        deliberation.setProp2(deliberationDto.getProp2());
+    }
+
+    public void updateDeliberation(DeliberationDto deliberationDto) {
+        Deliberation deliberation = deliberationDao.findDeliberationById(deliberationDto.getIdDeliberation());
 
         Set<Taux> taux = new LinkedHashSet<>();
         for(TauxDto curTauxDto : deliberationDto.getListeTauxDto()) {

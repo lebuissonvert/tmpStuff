@@ -16,7 +16,7 @@ public class Main {
     }
 
     private void update(DeliberationDto delibDto){
-
+        new DeliberationService().updateDeliberation(delibDto);
     }
 
     private void create(DeliberationDto delibDto) {
